@@ -1,8 +1,8 @@
-package org.yangxin.zkrmi;
+package org.yangxin.zkrmi.server;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.yangxin.HashService;
+import org.yangxin.zkrmi.services.HashService;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
@@ -21,7 +21,7 @@ public class HashServiceImpl extends UnicastRemoteObject implements HashService 
         HashMap<Integer,String> map = new HashMap<Integer, String>();
         map.put(1, name);
         map.put(2, name+"test");
-        logger.info("server hashmap code is {}",map.hashCode());
+        logger.debug("server hashmap code is {}",map.hashCode());
         return map;
     }
 }

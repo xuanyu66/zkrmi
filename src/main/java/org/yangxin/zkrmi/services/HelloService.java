@@ -1,4 +1,4 @@
-package org.yangxin;
+package org.yangxin.zkrmi.services;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
