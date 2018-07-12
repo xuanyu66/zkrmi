@@ -18,7 +18,7 @@ public class HashServiceImpl extends UnicastRemoteObject implements HashService 
     public HashServiceImpl() throws RemoteException {}
 
     public HashMap<Integer, String> getHash(String name) {
-        HashMap<Integer,String> map = new HashMap<Integer, String>();
+        HashMap<Integer,String> map = new HashMap<Integer, String>(10);
         map.put(1, name);
         map.put(2, name+"test");
         logger.debug("server hashmap code is {}",map.hashCode());

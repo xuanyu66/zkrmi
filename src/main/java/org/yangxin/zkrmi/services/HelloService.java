@@ -9,5 +9,10 @@ import java.rmi.RemoteException;
  */
 public interface HelloService extends Remote {
 
+    /**
+    * @Description: 远程调用返回一个String字符串
+    * @Param: [name]
+    * @return: java.lang.String
+    */
     String sayHello(String name) throws RemoteException;
 }

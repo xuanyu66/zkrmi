@@ -1,5 +1,6 @@
 package org.yangxin.zkrmi.server;
 
+import org.yangxin.zkrmi.services.Constant;
 import org.yangxin.zkrmi.services.HashService;
 
 import java.net.Inet4Address;
@@ -14,12 +15,12 @@ import java.rmi.RemoteException;
 public class Server {
 
     public static void main(String[] args) {
-        if(args.length != 2){
+        if(args.length != Constant.INPUT_ARGS_LENGTH){
             System.err.println("please using demand: java Server <rmi_pore> <rmi_port>");
             System.exit(-1);
         }
         String host = args[0];
-        if(host.equalsIgnoreCase("localhost") || host.equalsIgnoreCase("127.0.0.1")){
+        if(Constant.LOCALHOST_NAME.equalsIgnoreCase(host) || Constant.LOOPBACK_ADDRESS.equalsIgnoreCase(host)){
             try {
                 InetAddress inetAddress = InetAddress.getLocalHost();
                 host = inetAddress.toString().split("\\/")[1];

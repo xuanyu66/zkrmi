@@ -28,7 +28,7 @@ public class ServiceConsumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ServiceConsumer.class);
 
-    //定义一个 volatile 成员变量，用于保存最新的 RMI 地址（考虑到该变量或许会被其它线程所修改，一旦修改后，该变量的值会影响到所有线程）
+    /**定义一个 volatile 成员变量，用于保存最新的 RMI 地址（考虑到该变量或许会被其它线程所修改，一旦修改后，该变量的值会影响到所有线程）*/
     private volatile List<String> urlList = new ArrayList();
 
     private CountDownLatch latch = new CountDownLatch(1);

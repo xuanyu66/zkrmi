@@ -9,4 +9,7 @@ public interface Constant {
     int ZK_SESSION_TIMEOUT = 5000;
     String ZK_REGISTRY_PATH = "/registry";
     String ZK_PROVIDER_PATH = ZK_REGISTRY_PATH + "/provider";
+    String LOCALHOST_NAME = "localhost";
+    String LOOPBACK_ADDRESS = "127.0.0.1";
+    int INPUT_ARGS_LENGTH = 2;
 }
