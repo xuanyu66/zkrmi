@@ -17,10 +17,13 @@ public class RmiServer {
     private static final Logger logger = LoggerFactory.getLogger(RmiServer.class);
     public static void main(String[] args) {
         int port = 1011;
+        int port2 = 1012;
 
-        String url = "rmi://localhost:1011/org.yangxin.zkmi.HellpServiceImpl";
+        String url = "rmi://localhost:1011/org.yangxin.zkmi.HelloServiceImpl";
+        String url2 = "rmi://localhost:1012/org.yangxin.zkmi.HashServiceImpl";
         try {
             LocateRegistry.createRegistry(port);
+            LocateRegistry.createRegistry(port2);
             logger.info("create registry success");
         } catch (RemoteException e) {
             logger.error("Start server failed");
@@ -28,6 +31,7 @@ public class RmiServer {
         }
         try {
             Naming.rebind(url, new HelloServiceImpl()) ;
+            Naming.rebind(url2, new HashServiceImpl()) ;
             logger.info("start server success");
         } catch (RemoteException e) {
             logger.error("bind have a RemoteEception");
