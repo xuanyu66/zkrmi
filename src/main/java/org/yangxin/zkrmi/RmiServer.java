@@ -21,12 +21,14 @@ public class RmiServer {
         String url = "rmi://localhost:1011/org.yangxin.zkmi.HellpServiceImpl";
         try {
             LocateRegistry.createRegistry(port);
+            logger.info("create registry success");
         } catch (RemoteException e) {
             logger.error("Start server failed");
             System.exit(1);
         }
         try {
             Naming.rebind(url, new HelloServiceImpl()) ;
+            logger.info("start server success");
         } catch (RemoteException e) {
             logger.error("bind have a RemoteEception");
         } catch (MalformedURLException e) {

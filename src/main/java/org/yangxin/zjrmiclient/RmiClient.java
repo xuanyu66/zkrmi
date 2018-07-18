@@ -6,6 +6,7 @@ package org.yangxin.zjrmiclient;
  */
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.yangxin.HelloService;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -18,7 +19,7 @@ import java.rmi.RemoteException;
  */
 public class RmiClient {
 
-    private static final Logger logger = LoggerFactory.getLogger(org.yangxin.zkrmi.RmiServer.class);
+    private static final Logger logger = LoggerFactory.getLogger(org.yangxin.zjrmiclient.RmiClient.class);
 
     public static void main(String[] args) {
         String url = "rmi://localhost:1011/org.yangxin.zkmi.HellpServiceImpl";
@@ -33,10 +34,10 @@ public class RmiClient {
             logger.error("bind have a NotBoundException");
         } catch (MalformedURLException e) {
             e.printStackTrace();
-            logger.error("bind have a NotBoundException");
+            logger.error("bind have a MalformedURLException");
         } catch (RemoteException e) {
             e.printStackTrace();
-            logger.error("bind have a NotBoundException");
+            logger.error("bind have a RemoteException");
         }
     }
 }
