@@ -1,4 +1,6 @@
-package org.yangxin.zkrmi;
+package org.yangxin.zkrmi.server;
+
+import org.yangxin.zkrmi.services.HelloService;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
