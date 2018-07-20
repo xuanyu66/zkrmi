@@ -1,7 +1,7 @@
 # zkrmi
   RMI:远程方法调用(Remote Method Invocation)。能够让在客户端Java虚拟机上的对象像调用本地对象一样调用服务端java 虚拟机中的对象上的方法。
 
- ![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
+ ![image](https://github.com/xuanyu66/zkrmi/blob/master/javaRmi.png)
   #### RMI远程调用步骤：
 
 1，客户调用客户端辅助对象stub上的方法
